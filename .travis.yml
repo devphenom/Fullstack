@@ -7,9 +7,11 @@ services:
 install: 
   - "npm install"
 before_script:
-  # - psql -c "CREATE DATABASE nodedb;" -U postgres
-  # - psql -c "CREATE USER nodelogin WITH PASSWORD '123.456';" -U postgres
+  - psql -c "CREATE DATABASE nodedb;" -U postgres
+  - psql -c "CREATE USER nodelogin WITH PASSWORD '123.456';" -U postgres
   - npm install -g sequelize-cli
   - sequelize db:migrate
 script:
   - npm test
+after_success: 
+  - npm run coverage

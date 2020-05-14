@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "mocha --timeout 30000",
-    "coverage": "nyc --reporter=text npm test"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "nyc npm test&& nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
