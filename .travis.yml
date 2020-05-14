@@ -11,7 +11,10 @@ before_script:
   - psql -c "CREATE USER nodelogin WITH PASSWORD '123.456';" -U postgres
   - npm install -g sequelize-cli
   - sequelize db:migrate
+  - npm install -g codecov
 script:
   - npm test
-after_success: 
-  - npm run coverage
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov
+# after_success: 
+#   - npm run coverage

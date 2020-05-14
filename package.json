@@ -5,11 +5,11 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "mocha --timeout 30000",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "coveralls": "nyc npm test&& nyc report --reporter=text-lcov | coveralls"
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "codecov": "^3.6.5",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -17,6 +17,7 @@
     "express-session": "^1.17.0",
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
+    "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "morgan": "~1.9.1",
