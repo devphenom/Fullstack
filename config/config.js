@@ -1,20 +1,20 @@
 module.exports = {
   "development": {
-    "username": "fullstack-dbuser",
-    "password": '123456',
-    "database": "fullstack-db",
+    "username": "nodelogin",
+    "password": '123.456',
+    "database": "nodedb",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "port": 5432
     // "operatorsAliases": false
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "nodelogin",
+    "password": '123.456',
+    "database": "nodedb",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "postgres",
+    "port": 5432
   },
   "production": {
     "username": "root",
