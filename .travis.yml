@@ -13,7 +13,6 @@ before_script:
   - sequelize db:migrate
   - npm install -g codecov
 script:
-  - npm test
   - npm run coverage
   - npm run codecov
 # after_success: 
