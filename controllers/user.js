@@ -27,8 +27,7 @@ exports.signup = async function(req, res, next) {
 				email: req.body.email,
 				password: generateHash
 			}); 
-			newUser.save()
-			.then(result => {
+			return newUser.save().then(result => {
 				jwt.sign({user : result}, 'secretkey', (err, token) => {
 					if (err) {
 						return next(err)
@@ -36,7 +35,8 @@ exports.signup = async function(req, res, next) {
 					res.json({session: token})
 					return;
 				})
-			})(req, res, next)
+				newUser.destroy();
+			});
 		}
 	})
 }
