@@ -36,7 +36,7 @@ exports.signup = async function(req, res, next) {
 					res.json({session: token})
 					return;
 				})
-			})
+			})(req, res, next)
 		}
 	})
 }
