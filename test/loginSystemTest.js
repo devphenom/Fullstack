@@ -16,7 +16,7 @@ describe('Signup route', function(){
             done();
         })
     });
-    const newUser = {email: 'sample1@email.com', password: "mypassword"}
+    const newUser = {email: 'sample01@email.com', password: "mypassword"}
     it('should return true', function(done){
        chai.request(server)
         .post('/users/signup')
