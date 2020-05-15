@@ -16,8 +16,8 @@ describe('Signup route', function(){
             done();
         })
     });
-    const newUser = {email: 'iphenomf9@gmail.com', password: "ajibola01"}
-    it('should return true', async function(){
+    const newUser = {email: 'sample1@email.com', password: "mypassword"}
+    it('should return true', function(done){
        chai.request(server)
         .post('/users/signup')
         .send(newUser)
@@ -29,6 +29,7 @@ describe('Signup route', function(){
                 expect(res.body).to.be.an('object')
                 expect(res.body).to.have.property('session').to.be.a('string');
                 expect(res.body).to.have.property('session').to.not.be.null;
+                done();
             };
         })
     });
@@ -43,15 +44,16 @@ describe('Login route', function(){
             done();
         })
     });
-    it('should return true', async function(){
+    it('should return true', function(done){
         chai.request(server)
         .post('/users/login')
-        .send({email: 'iphenom99@gmail.com', password: "ajibola01"})
+        .send({email: 'sample01@email.com', password: "mypassword"})
         .end(function(err, res){ 
             expect(res).to.have.status(200)
             expect(res.body).to.be.an('object')
             expect(res.body).to.have.property('session').to.be.a('string');
             expect(res.body).to.have.property('session').to.not.be.null;
+            done()
         })
     })
 });
