@@ -23,7 +23,6 @@ exports.validateUser = function(errors, req, res) {
         }).then(u => {
             if (u != null) {
                 errors["error"] = "Email already in use"
-                // res.json({"error" : "email already exists"})
             }
             resolve(errors);
         })

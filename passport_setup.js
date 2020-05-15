@@ -2,7 +2,6 @@ let localStrategy = require('passport-local').Strategy;
 
 let bcrypt  = require('bcrypt')
 let models = require('./models')
-let jwt = require('jsonwebtoken');
 
 
 module.exports = function(passport) {
@@ -33,25 +32,22 @@ module.exports = function(passport) {
             },
         }).then(user => {
             if (user == null) {
-				req.flash('message', 'Incorrect credentials.')
+				// req.flash('message', 'Incorrect credentials.')
                 return done(null, false)
             }
             bcrypt.compare(password, user.password, (err, isMatch) => {
-                if (err) {
+                if (err) {  
                     throw err;
                 }
                 if(isMatch){
-                    jwt.sign({user : user}, 'secretkey', (err, token) => {
-                        console.log({success: true, token: token})
-                    })
                     return done(null, user);
                 } else {
-                    console.log({success: false, message: "Password is not correct"})
                     return done(null, false, { message: 'Password is not correct'})
                 }
             })
         }).catch(err => {
             done(err, false)
         })
-    }))
+    }));
+
 }
