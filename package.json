@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha --timeout 30000",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
+    "test": "mocha --timeout 30000 test",
+    "coverage": "nyc mocha test",
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
