@@ -1,4 +1,4 @@
 node_modules
-*.lcov
-.nyc_output
-coverage
+# *.lcov
+# .nyc_output
+# # coverage
