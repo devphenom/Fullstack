@@ -6,11 +6,10 @@
     "start": "node ./bin/www",
     "test": "mocha --timeout 30000 test",
     "coverage": "nyc mocha test",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "codecov": "nyc report --reporter=text-lcov && codecov"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
-    "codecov": "^3.6.5",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -18,7 +17,6 @@
     "express-session": "^1.17.0",
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
-    "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "morgan": "~1.9.1",
@@ -34,6 +32,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "codecov": "^3.7.0",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1",
     "request": "^2.88.2"

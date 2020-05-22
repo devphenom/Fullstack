@@ -20,7 +20,7 @@ describe('Signup route', function(){
         chai.request(server)
         .get('/users/signup')
         .end(function(err, res){
-            expect(res).to.have.status(200)
+            expect(res).to.have.status(200);
             done();
         })
     });

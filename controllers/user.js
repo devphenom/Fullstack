@@ -8,7 +8,7 @@ const {isEmpty} = require('lodash')
 const { validateUser} = require('../validators/signup');
 
 exports.get_singup = function(req, res, next) {
-    res.render('user/signup', { formData: {}, errors: {} });
+    res.render('user/signup');
 }
 
 exports.get_login = function(req, res, next) {
