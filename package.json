@@ -6,11 +6,10 @@
     "start": "node ./bin/www",
     "test": "mocha --timeout 30000 test",
     "coverage": "nyc mocha test",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "codecov": "nyc report --reporter=text-lcov && codecov"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
-    "codecov": "^3.6.5",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -35,6 +34,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "codecov": "^3.7.0",
     "coveralls": "^3.1.0",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1",
