@@ -27,7 +27,7 @@
     "postgresql": "0.0.1",
     "pug": "^3.0.1",
     "sequelize": "^5.21.8",
-    "validator": "^13.0.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
