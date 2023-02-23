@@ -26,7 +26,7 @@
     "pg": "^8.0.2",
     "postgresql": "0.0.1",
     "pug": "^3.0.1",
-    "sequelize": "^5.21.8",
+    "sequelize": "^6.28.2",
     "validator": "^13.7.0"
   },
   "devDependencies": {
